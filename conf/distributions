@@ -1,0 +1,8 @@
+Origin: Smart-M3
+Label: Smart-M3
+Codename: smart-m3
+Suite: testing
+Architectures: amd64 i386
+Components: testing stable
+Description: Smart-M3 platform
+SignWith: 0F160056
