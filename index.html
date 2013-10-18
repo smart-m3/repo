@@ -1,20 +1,48 @@
 <html>
 <head>
 <title>Smart-M3 distribution server</title>
+<style>
+.code {
+	background-color: #dfdfdf;
+	padding: 15px 15px 15px 25px;
+}
+</style>
 </head>
 <body bgcolor="white" text="black">
 <center><h1>Smart-M3 distribution repo</h1></center>
-For installing Smart-M3 do next steps:
+
+<p>For installing Smart-M3 do next steps:</p>
+
 <ul>
-<li>Add next line into /etc/apt/sources.list file
-   <p><b>deb http://download.geo2tag.org/smart-m3-repo/ smart-m3 stable</b>
-   <p><b>deb http://download.geo2tag.org/smart-m3-repo/ smart-m3 testing</b>
-</li>
-<li>Run <i>wget -q -O - http://download.geo2tag.org/public.key | sudo apt-key add - </i></li>
-<li>Run <i>sudo apt-get update</i></li>
-<li>Use <i>sudo apt-get install</i> for installing required components: redsibd, sib-tcp, libwhiteboard, whiteboard, whiteboard-sib-access</li>
+	<li>Add next line into /etc/apt/sources.list file<br />
+		<div class="code">
+	        <i>deb http://download.geo2tag.org/smart-m3-repo/ smart-m3 stable<br />
+	        deb http://download.geo2tag.org/smart-m3-repo/ smart-m3 testing</i>
+		</div>
+	</li>
+	<li>Run <i>wget -q -O - http://download.geo2tag.org/public.key | sudo apt-key add - </i></li>
+	<li>Run <i>sudo apt-get update</i></li>
+	<li>Use <i>sudo apt-get install</i> for installing required components: redsibd, sib-tcp, libwhiteboard, whiteboard, whiteboard-sib-access</li>
 </ul>
 
+<p>For initial testing Smart-M3 do next steps:</p>
 
+<ul>
+	<li>Go to http://eslab.github.io/Web-SIB-Explorer/ and download Web-SIB-Explorer</li>
+	<li>Install dependencies <i>sudo pip install flask flask-sqlalchemy</i></li>
+	<li>To run it type python explorer.py. The open your web browser and go to _http://127.0.0.1:5000_. You can also pass the argument --ip and --port for running the application on a different IP and PORT</li>
+</ul>
+
+<p>Testing:</p>
+
+<ul>
+	<li>To connect to the SIB you can use either the IP or an IP:PORT combination.
+        The default port for connecting to the SIB is 10010, and it will be used if no port is supplied.
+        If you are only running sib-tcp locally, without any arguments, then you are running the SIB on
+        127.0.0.1:10010, and you can connect simply by typing 127.0.0.1.</li>
+    <li>Click on Maintaince tab and then load Test Ontology</li>  
+    <li>Now on Benchmark tab run the benchmark. And if everything had been installed correctly you would get something like this:</li>
+    <img src="/benchmark.png" width="1182" height="381">
+</ul>
 </body>
 </html>
