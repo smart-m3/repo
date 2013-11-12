@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Smart-M3 distribution server</title>
+        <meta charset="utf-8">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .well 
+            {
+                margin-top: 40px;
+            }
+            .inner_wrapper
+            {
+                margin-top: 10px; 
+            }
+            .img-responsive
+            {
+                max-width: 87%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">    
+        <div class="row">
+            <div class="well col-md-12 form-horizontal inner_wrapper">
+                <legend class="text-center"><h1><strong>Smart-M3 distribution repo</strong></h1></legend>
+                 <div class="navbar-default">
+                    <ul class="nav nav-tabs">
+                        <li><a href="index.html">Install Smart-m3</a></li>
+                        <li><a href="install_test.html">Install Web-SIB-Explorer</a></li>
+                        <li class="active"><a href="testing.html">Testing</a></li>
+                    </ul>
+                 </div>
+                 <div class="container inner_wrapper">
+                    <label>For start testing Smart-M3 do following steps:</label>
+                    <ul>
+                        <li>Open 3 terminal windows and run commands in separate window: <code>redsibd</code>, <code>sib-tcp</code>, <code>whiteboardd</code>.<br /> If you want smart-m3 to be reachable from KPs(e.g. Web-SIB-Explorer) that are not running on the same device, run sib-tcp command with parameter <code>--ip 0.0.0.0</code>.<br />Also you could specify PORT with <code>--port PORT</code>. So you can run smart-m3 and Web-SIB-Explorer on different machines.</li>
+                        <li>In another terminal window go to the directory, where you unziped Web-SIB-Explorer.</li>
+                        <li>To run Web-SIB-Explorer type <code>python explorer.py</code>.</li> 
+                        <li>Then open your web browser and go to <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>. You can also pass the argument <code>--ip</code> and <code>--port</code> for running the application on a different IP and PORT.</li>
+                        <li>To connect to the SIB you can use either the IP or an IP:PORT combination.<br />The default port for connecting to the SIB is <strong class="text-primary">10010</strong>, and it will be used if no port is supplied.<br /> If you are only running sib-tcp locally, without any arguments, then you are running the SIB on <strong class="text-primary">127.0.0.1:10010</strong>, and you can connect simply by typing <strong class="text-primary">127.0.0.1</strong>.</li>
+                        <li>Click on <strong class="text-primary">Maintaince</strong> tab and then load <strong class="text-primary">Test Ontology</strong>.</li>
+                        <li>Now on <strong class="text-primary">Benchmark</strong> tab run the benchmark.</li>
+                        <p><h5><strong>If everything had been installed correctly you would get something like this:</strong></h5></p>
+                        <div class="container">
+                            <img src="benchmark.png" class="img-rounded img-responsive">
+                        </div>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>   
+
+       <script src="http://code.jquery.com/jquery-latest.js"></script>
+       <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

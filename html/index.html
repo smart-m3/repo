@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Smart-M3 distribution server</title>
+        <meta charset="utf-8">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .well 
+            {
+                margin-top: 40px;
+            }
+            .inner_wrapper
+            {
+                margin-top: 10px; 
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">    
+        <div class="row">
+            <div class="well col-md-12 form-horizontal">
+                <legend class="text-center"><h1><strong>Smart-M3 distribution repo</strong></h1></legend>
+                 <div class="navbar-default">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="index.html">Install Smart-m3</a></li>
+                        <li><a href="install_test.html">Install Web-SIB-Explorer</a></li>
+                        <li><a href="testing.html">Testing</a></li>
+                    </ul>
+                 </div>
+                 <div class="container inner_wrapper">
+                    <label>For installing Smart-M3 do following steps:</label>
+                    <ul>
+                        <li>Add next line into <code>/etc/apt/sources.list</code> file<br />
+                            <div class="row">
+                                <div class=" alert alert-info col-md-11 col-sm-11 col-xs-11 text-danger" style="margin-bottom: 0px">
+                                    deb http://download.geo2tag.org/smart-m3-repo/ smart-m3 stable<br />
+                                    deb http://download.geo2tag.org/smart-m3-repo/ smart-m3 testing
+                                </div>
+                            </div>
+                        </li>
+                        <li>Run <code>wget -q -O - http://download.geo2tag.org/public.key | sudo apt-key add -</code></li>
+                        <li>Run <code>sudo apt-get update</code></li>
+                        <li>Run <code>sudo apt-get install redsibd sib-tcp libwhiteboard whiteboard whiteboard-sib-access</code> to install SIB and both SIB and KP side transport modules</li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>   
+
+       <script src="http://code.jquery.com/jquery-latest.js"></script>
+       <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
